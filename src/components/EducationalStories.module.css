@@ -1,0 +1,515 @@
+.storiesContainer {
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, #f7fafc, #edf2f7);
+  overflow: hidden;
+}
+
+.title {
+  font-size: 1.75rem;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #2b6cb0, #4c51bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.storyRow {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 #cbd5e0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.storyRow::-webkit-scrollbar {
+  height: 6px;
+}
+
+.storyRow::-webkit-scrollbar-track {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.storyRow::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 3px;
+}
+
+.storyCard {
+  flex: 0 0 140px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  padding-top: 177.77%;
+  overflow: hidden;
+}
+
+.storyImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.storyCard:hover .overlay {
+  transform: translateY(0);
+}
+
+.storyCard:hover .storyImage {
+  transform: scale(1.1);
+}
+
+.category {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+
+.storyTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalImage {
+  width: 100%;
+  height: auto;
+  max-height: calc(90vh - 100px);
+  object-fit: contain;
+  background: #f7fafc;
+}
+
+.modalInfo {
+  padding: 1rem;
+  background: white;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #2d3748;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.modalCategory {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: #4a5568;
+  color: white;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  align-self: flex-start;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .storiesContainer {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .storyCard {
+    flex: 0 0 120px;
+  }
+
+  .modalContent {
+    width: 95vw;
+    max-height: 85vh;
+  }
+
+  .modalImage {
+    max-height: calc(85vh - 90px);
+  }
+
+  .modalInfo {
+    min-height: 70px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storiesContainer {
+    padding: 1rem 0.25rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .storyCard {
+    flex: 0 0 100px;
+  }
+
+  .category {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.3rem;
+  }
+
+  .storyTitle {
+    font-size: 0.75rem;
+  }
+
+  .overlay {
+    padding: 0.5rem;
+  }
+
+  .modalImage {
+    max-height: calc(85vh - 80px);
+  }
+
+  .modalInfo {
+    min-height: 60px;
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .modalTitle {
+    font-size: 1rem;
+  }
+
+  .modalCategory {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  z-index: 2;
+}
+
+.navButton:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: 16px;
+}
+
+.nextButton {
+  right: 16px;
+}
+
+/* Responsive adjustments for navigation buttons */
+@media (max-width: 768px) {
+  .navButton {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .prevButton {
+    left: 12px;
+  }
+
+  .nextButton {
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navButton {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .prevButton {
+    left: 8px;
+  }
+
+  .nextButton {
+    right: 8px;
+  }
+}
+
+.storiesSection {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #1a237e, #0d47a1);
+  border-radius: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.storyCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.storyCard:hover {
+  transform: translateY(-5px);
+}
+
+.imageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.storyCard:hover .imageContainer img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.stats {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.content h3 {
+  color: #1a237e;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.callToAction {
+  text-align: center;
+  background: linear-gradient(to right, #1a237e, #0d47a1);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.callToAction h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.callToAction p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.ctaButton {
+  background: white;
+  color: #1a237e;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .callToAction h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .storiesSection {
+    padding: 4rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .callToAction {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storiesSection {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .imageContainer {
+    height: 180px;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .callToAction h3 {
+    font-size: 1.5rem;
+  }
+
+  .callToAction p {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 300px;
+  }
+} 

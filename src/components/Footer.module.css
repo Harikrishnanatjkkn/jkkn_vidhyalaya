@@ -1,0 +1,282 @@
+.footer {
+  background: linear-gradient(to bottom, #1a237e, #0d47a1);
+  color: white;
+  padding: 4rem 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+  z-index: 10;
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.mapSection,
+.institutionsSection,
+.contactSection {
+  padding: 1rem;
+}
+
+.mapSection h3,
+.institutionsSection h3,
+.contactSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.mapSection h3::after,
+.institutionsSection h3::after,
+.contactSection h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #4a90e2;
+}
+
+.mapContainer {
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.institutionsSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.institutionsSection li {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactInfo p {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  color: #4a90e2;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.contactInfo a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: #4a90e2;
+}
+
+.socialSection {
+  margin-top: 2rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialLinks a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.copyrightContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.smallLogo {
+  width: 40px;
+  height: auto;
+  background: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mapSection {
+    grid-column: span 2;
+  }
+
+  .mapContainer {
+    height: 250px;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem 1rem;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mapSection {
+    grid-column: span 1;
+  }
+
+  .mapContainer {
+    height: 200px;
+  }
+
+  .institutionsSection li {
+    font-size: 0.9rem;
+  }
+
+  .contactInfo p {
+    font-size: 0.9rem;
+  }
+
+  .socialLinks a {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    max-width: 150px;
+    padding: 6px;
+  }
+
+  .copyrightContent {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .smallLogo {
+    width: 30px;
+    padding: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .mapSection h3,
+  .institutionsSection h3,
+  .contactSection h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .mapContainer {
+    height: 180px;
+  }
+
+  .socialLinks {
+    gap: 0.75rem;
+  }
+
+  .socialLinks a {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .copyright {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    max-width: 120px;
+    padding: 5px;
+  }
+
+  .smallLogo {
+    width: 25px;
+    padding: 2px;
+  }
+} 

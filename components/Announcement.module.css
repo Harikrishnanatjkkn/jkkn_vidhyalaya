@@ -1,0 +1,112 @@
+.announcementContainer {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.eventList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.eventCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.eventLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.eventContent {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventInfo {
+  flex: 1;
+}
+
+.eventTitle {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.dateContainer {
+  display: flex;
+  align-items: center;
+  color: #718096;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.date {
+  font-size: 0.875rem;
+}
+
+.arrowIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #4a5568;
+  transition: transform 0.2s ease;
+}
+
+.eventCard:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .announcementContainer {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .eventList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .announcementContainer {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .eventContent {
+    padding: 1rem;
+  }
+
+  .eventTitle {
+    font-size: 1.1rem;
+  }
+} 

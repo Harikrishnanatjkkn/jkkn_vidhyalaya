@@ -1,0 +1,156 @@
+.aboutContainer {
+  width: 100%;
+  background: #ffffff;
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerOverlay h1 {
+  color: white;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Founder Section */
+.founderSection {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.founderImage {
+  text-align: center;
+}
+
+.founderImage img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.founderImage h2 {
+  color: #1a237e;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.founderContent {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.historySection p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.historySection p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .founderSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .founderImage img {
+    max-width: 300px;
+  }
+
+  .bannerOverlay h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 50vh;
+  }
+
+  .bannerOverlay h1 {
+    font-size: 3rem;
+  }
+
+  .founderSection {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .founderContent {
+    padding: 1.5rem;
+  }
+
+  .historySection p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 40vh;
+  }
+
+  .bannerOverlay h1 {
+    font-size: 2rem;
+  }
+
+  .founderSection {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .founderImage img {
+    max-width: 250px;
+  }
+
+  .founderImage h2 {
+    font-size: 1.25rem;
+  }
+
+  .founderContent {
+    padding: 1rem;
+  }
+
+  .historySection p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+} 
