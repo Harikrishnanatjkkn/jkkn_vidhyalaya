@@ -55,12 +55,13 @@ const Infrastructure: React.FC = () => {
         backgroundImage: 'url("banner.jpg")' 
       }}>
         <div className="absolute inset-0 bg-blue-900 bg-opacity-80">
-          <div className="h-full flex flex-col items-center justify-center text-white">
+          <div className="h-full flex flex-col items-center justify-center text-white font-montserrat">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-playfair font-bold text-center px-4"
+              className="text-4xl md:text-6xl font-bold text-center px-4 tracking-tight leading-tight uppercase"
+              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
             >
               School Infrastructure
             </motion.h1>
@@ -68,7 +69,8 @@ const Infrastructure: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-4 text-lg md:text-xl text-center max-w-2xl px-4"
+              className="mt-6 text-lg md:text-2xl text-center max-w-2xl px-4 font-light tracking-wide"
+              style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}
             >
               State-of-the-art facilities for holistic education
             </motion.p>
