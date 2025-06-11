@@ -16,8 +16,8 @@ const generalInfo: SchoolInfo[] = [
   { title: 'AFFILIATION NO.', details: '1234567' },
   { title: 'SCHOOL CODE', details: '54321' },
   { title: 'COMPLETE ADDRESS WITH PIN CODE', details: '123 Education Street, Knowledge City - 600001' },
-  { title: 'PRINCIPAL NAME', details: 'Dr. Sarah Johnson' },
-  { title: 'PRINCIPAL QUALIFICATION', details: 'Ph.D. in Education, M.Ed., B.Ed.' },
+  { title: 'PRINCIPAL NAME', details: 'M Koshi Priya' },
+  { title: 'PRINCIPAL QUALIFICATION', details: 'M.A (Eng)., M.A (His)., Diploma in M.T.T., B.Ed., TESOL' },
   { title: 'SCHOOL EMAIL ID', details: 'principal@jkknschool.edu' },
   { title: 'CONTACT DETAILS', details: '+91 98765 43210' },
 ];
