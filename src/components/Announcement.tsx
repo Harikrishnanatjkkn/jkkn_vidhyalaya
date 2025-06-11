@@ -19,9 +19,8 @@ const Announcement = ({ events }: AnnouncementProps) => {
       <div className={styles.container}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className={styles.title}
         >
           Latest News & Events
@@ -32,20 +31,52 @@ const Announcement = ({ events }: AnnouncementProps) => {
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileInView={{ 
+                opacity: 1, 
+                y: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 50,
+                  damping: 20,
+                  duration: 0.8,
+                  delay: index * 0.1
+                }
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
               className={styles.eventCard}
             >
-              <div className={styles.dateBox}>
+              <motion.div 
+                className={styles.dateBox}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 {new Date(event.date).toLocaleDateString('en-US', {
                   month: 'short',
                   day: 'numeric'
                 })}
-              </div>
+              </motion.div>
+              
               <div className={styles.eventContent}>
-                <h3>{event.title}</h3>
-                <a href={event.link} className={styles.learnMore}>
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  {event.title}
+                </motion.h3>
+                <motion.a 
+                  href={event.link} 
+                  className={styles.learnMore}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   Learn More
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +92,7 @@ const Announcement = ({ events }: AnnouncementProps) => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           ))}
@@ -74,9 +105,16 @@ const Announcement = ({ events }: AnnouncementProps) => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className={styles.viewAll}
         >
-          <button className={styles.viewAllBtn}>
+          <motion.button 
+            className={styles.viewAllBtn}
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
             View All Events
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </section>
